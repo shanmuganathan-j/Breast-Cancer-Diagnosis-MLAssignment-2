@@ -13,7 +13,10 @@ app needs:
     data/wdbc.data              -> raw file downloaded from UCI (cached copy)
     data/breast_cancer_full.csv -> the complete cleaned dataset (for reference)
 
-Run:  python train_models.py
+Location: model/train_models.py (works from any folder; paths are resolved
+relative to the project root, i.e. the folder that contains app.py).
+
+Run from the project root:   python model/train_models.py
 """
 import io
 import os
@@ -39,8 +42,14 @@ from sklearn.metrics import (
 
 SEED = 2026
 TARGET = "diagnosis"          # 1 = malignant, 0 = benign (re-coded below)
-MODEL_DIR = "model"
-DATA_DIR = "data"
+# --- paths (resolved from this file's location, so cwd does not matter) -------
+_HERE = os.path.dirname(os.path.abspath(__file__))
+# This script lives in <project>/model/. If it is run from the project root
+# instead, fall back to that folder.
+BASE_DIR = os.path.dirname(_HERE) if os.path.basename(_HERE) == "model" else _HERE
+MODEL_DIR = os.path.join(BASE_DIR, "model")
+DATA_DIR = os.path.join(BASE_DIR, "data")
+TEST_FILE = os.path.join(BASE_DIR, "test_data.csv")
 
 # Direct download link of the UCI dataset (id = 17). The zip contains wdbc.data.
 UCI_URL = "https://archive.ics.uci.edu/static/public/17/breast+cancer+wisconsin+diagnostic.zip"
@@ -153,7 +162,7 @@ def main():
     # Held-out test data -> uploaded to the Streamlit app later
     test_df = X_test.copy()
     test_df[TARGET] = y_test.values
-    test_df.to_csv("test_data.csv", index=False)
+    test_df.to_csv(TEST_FILE, index=False)
 
     rows = []
     for name, model in build_models().items():

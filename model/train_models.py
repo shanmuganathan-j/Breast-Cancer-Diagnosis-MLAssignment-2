@@ -42,7 +42,7 @@ from sklearn.metrics import (
 
 SEED = 2026
 TARGET = "diagnosis"          # 1 = malignant, 0 = benign (re-coded below)
-# --- paths (resolved from this file's location, so cwd does not matter) -------
+# --- paths (resolved from this file's location, so cwd does not matter) ------
 _HERE = os.path.dirname(os.path.abspath(__file__))
 # This script lives in <project>/model/. If it is run from the project root
 # instead, fall back to that folder.

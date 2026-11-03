@@ -20,9 +20,9 @@ The 30 features are computed from digitised images of a fine-needle aspirate of 
 **Train/test split:** 80 % train (455 rows) / 20 % test (114 rows), stratified, `random_state = 2026`. The 114 held-out rows are saved as `test_data.csv` and are the file to upload in the app.
 
 ## 3. GitHub Repository Link
-**GitHub Repository:** 
+**GitHub Repository:** https://github.com/shanmuganathan-j/Breast-Cancer-Diagnosis-MLAssignment-2
 
-**Live Streamlit app:** `<PASTE YOUR STREAMLIT APP LINK HERE>`
+**Live Streamlit app:** https://breast-cancer-diagnosis-mlassignment-2.streamlit.app/
 
 ### Repository structure
 ```
@@ -31,8 +31,6 @@ project-folder/
 |-- requirements.txt
 |-- README.md
 |-- test_data.csv           # held-out test data (features + diagnosis)
-|-- .streamlit/
-|   `-- config.toml         # blue theme
 |-- data/
 |   |-- wdbc.data           # raw file downloaded from UCI
 |   `-- breast_cancer_full.csv

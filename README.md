@@ -7,7 +7,7 @@ Early and accurate classification of a breast tumour as **benign** or **malignan
 | Item | Detail |
 |---|---|
 | Name | Breast Cancer Wisconsin (Diagnostic) |
-| Source | UCI Machine Learning Repository: https://archive.ics.uci.edu/dataset/17/breast-cancer-wisconsin-diagnostic (downloaded directly from https://archive.ics.uci.edu/static/public/17/breast+cancer+wisconsin+diagnostic.zip by `train_models.py`) |
+| Source | UCI Machine Learning Repository: https://archive.ics.uci.edu/dataset/17/breast-cancer-wisconsin-diagnostic (downloaded directly from https://archive.ics.uci.edu/static/public/17/breast+cancer+wisconsin+diagnostic.zip by `model/train_models.py`) |
 | Type | Binary classification |
 | Instances | 569 (minimum required: 500) |
 | Features | 30 numeric features (minimum required: 12) |
@@ -20,15 +20,14 @@ The 30 features are computed from digitised images of a fine-needle aspirate of 
 **Train/test split:** 80 % train (455 rows) / 20 % test (114 rows), stratified, `random_state = 2026`. The 114 held-out rows are saved as `test_data.csv` and are the file to upload in the app.
 
 ## 3. GitHub Repository Link
-**GitHub Repository:** https://github.com/shanmuganathan-j/Breast-Cancer-Diagnosis-MLAssignment-2
+**GitHub Repository:** 
 
-**Live Streamlit app:** https://breast-cancer-diagnosis-mlassignment-2.streamlit.app/
+**Live Streamlit app:** `<PASTE YOUR STREAMLIT APP LINK HERE>`
 
 ### Repository structure
 ```
 project-folder/
 |-- app.py                  # Streamlit app
-|-- train_models.py         # trains, evaluates and saves all 5 models
 |-- requirements.txt
 |-- README.md
 |-- test_data.csv           # held-out test data (features + diagnosis)
@@ -38,6 +37,7 @@ project-folder/
 |   |-- wdbc.data           # raw file downloaded from UCI
 |   `-- breast_cancer_full.csv
 `-- model/
+    |-- train_models.py     # downloads data, trains, evaluates and saves all 5 models
     |-- logistic_regression.joblib
     |-- decision_tree.joblib
     |-- k_nearest_neighbor.joblib
@@ -90,6 +90,6 @@ Other features:
 ## 6. Run Locally
 ```bash
 pip install -r requirements.txt
-python train_models.py      # optional: downloads the dataset from UCI (needs internet), retrains and regenerates model/ and test_data.csv
+python model/train_models.py   # optional: downloads the dataset from UCI (needs internet), retrains and regenerates model/ and test_data.csv
 python -m streamlit run app.py
 ```

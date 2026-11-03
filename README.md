@@ -88,6 +88,5 @@ Other features:
 ## 6. Run Locally
 ```bash
 pip install -r requirements.txt
-python model/train_models.py   # optional: downloads the dataset from UCI (needs internet), retrains and regenerates model/ and test_data.csv
 python -m streamlit run app.py
 ```

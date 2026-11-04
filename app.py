@@ -178,8 +178,8 @@ def draw_confusion(cm, normalize: bool):
 st.sidebar.title("🔬 ML - Assignment 2")
 st.sidebar.caption("Breast Cancer Wisconsin (Diagnostic) | 5 ML models comparison")
 
-st.sidebar.subheader("Name: Shanmuganathan J")
-st.sidebar.subheader("Student ID: 2026AK05381")
+st.sidebar.caption("Name: Shanmuganathan J")
+st.sidebar.caption("Student ID: 2026AK05381")
 
 st.sidebar.subheader("Project details")
 page = st.sidebar.radio("Navigate", PAGES, label_visibility="collapsed")

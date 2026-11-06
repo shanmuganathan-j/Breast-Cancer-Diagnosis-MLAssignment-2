@@ -32,8 +32,7 @@ project-folder/
 |-- README.md
 |-- test_data.csv           # held-out test data (features + diagnosis)
 |-- data/
-|   |-- wdbc.data           # raw file downloaded from UCI
-|   `-- breast_cancer_full.csv
+|   `-- breast_cancer_full.csv  # raw file downloaded from UCI
 `-- model/
     |-- train_models.py     # downloads data, trains, evaluates and saves all 5 models
     |-- logistic_regression.joblib
